@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m) {
+    vector<int> result;
+    int i = 0, j = 0;
+
+    
+    while (i < n && j < m) {
+        if (arr1[i] < arr2[j]) {
+            i++;  // Increment the pointer for arr1
+        } else if (arr1[i] > arr2[j]) {
+            j++;  // Increment the pointer for arr2
+        } else {
+            
+            result.push_back(arr1[i]);
+            i++;
+            j++;
+        }
+    }
+    return result;
+}
